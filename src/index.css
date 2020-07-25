@@ -12,7 +12,6 @@ body{
 main{
   height: 90vh;
   width: 100%;
-  background-color: aquamarine;
 }
 
 /* navbar */
@@ -40,4 +39,24 @@ li:hover{
   background-color: lightgrey;
   border-radius: 50%;
   padding: 4px;
+}
+
+/* counters */
+
+.counterlist{
+  padding: 50px;
+}
+
+.counteritem{
+  color: blue;
+  width: 100px;
+  background-color: lightblue;
+  margin: 0px 3px;
+  border-radius: 10%;
+  max-height: 90px;
+  cursor: pointer;
+}
+
+.counteritem p{
+  font-size: 40px;
 }
