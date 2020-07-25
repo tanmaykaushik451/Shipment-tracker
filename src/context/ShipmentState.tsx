@@ -5,7 +5,7 @@ import ShipmentReducer, { Action } from "./ShipmentReducer"
 import ShipmentContext from "./ShipmentContext"
 import axios from 'axios';
 
-import { GET_SHIPMENTS, SHIPMENT_ERROR, GET_COUNTERS } from "./Types"
+import { GET_SHIPMENTS, SHIPMENT_ERROR, GET_COUNTERS, SET_FILTERS } from "./Types"
 
 const ShipmentState =(props:any)=>{
 
@@ -35,11 +35,16 @@ const ShipmentState =(props:any)=>{
         dispatch({type:GET_COUNTERS})
     }
 
+    const setfilters =(status : string)=>{
+        dispatch({type:SET_FILTERS,payload:status})
+    }
+
     return(
         <ShipmentContext.Provider value={{
             State:state,
             getshipments,
-            getcounters
+            getcounters,
+            setfilters
         }}>
             {props.children}
         </ShipmentContext.Provider>

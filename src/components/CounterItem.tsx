@@ -1,21 +1,28 @@
-import React from "react"
+import React, { useContext } from "react";
+import ShipmentContext from "../context/ShipmentContext";
 
-export interface ICounter{
-    current_status_code : string,
-    count : Number
+export interface ICounter {
+  current_status_code: string;
+  count: Number;
 }
 
-const CounterItem : React.FC<ICounter> =({current_status_code,count})=>{
-    return(
-        <div className="d-flex flex-column p-2 counteritem">
-           <div>
-               {current_status_code}
-           </div>
-           <div className="d-flex justify-content-center">
-               <p>{count}</p>
-           </div>
-        </div>
-    )
-}
+const CounterItem: React.FC<ICounter> = ({ current_status_code, count }) => {
+  const shipmentcontext = useContext(ShipmentContext);
 
-export default CounterItem
+  const { setfilters } = shipmentcontext;
+
+  const showfilter = () => {
+    setfilters(current_status_code);
+  };
+
+  return (
+    <div className="d-flex flex-column p-2 counteritem" onClick={showfilter}>
+      <div>{current_status_code}</div>
+      <div className="d-flex justify-content-center">
+        <p className="m-0">{count}</p>
+      </div>
+    </div>
+  );
+};
+
+export default CounterItem;

@@ -60,3 +60,11 @@ li:hover{
 .counteritem p{
   font-size: 40px;
 }
+
+.stepper{
+  flex: 1;
+}
+
+.tablediv{
+flex: 1;
+}

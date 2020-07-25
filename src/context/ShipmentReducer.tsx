@@ -1,5 +1,5 @@
 import { IInitialstate } from "../state/interface/IInitialState";
-import {GET_SHIPMENTS, GET_COUNTERS} from "./Types"
+import {GET_SHIPMENTS, GET_COUNTERS, SET_FILTERS} from "./Types"
 export interface Action{
     type : string,
     payload? : any
@@ -23,6 +23,11 @@ export default  (state : IInitialstate,action:Action) : IInitialstate =>{
                     }
                     return a;
                 }, new Map()).values()]
+            }
+        case SET_FILTERS:
+            return{
+                ...state,
+                filtered: state.shipments.filter((item) => item.current_status_code === action.payload)
             }
         default :
         return state
