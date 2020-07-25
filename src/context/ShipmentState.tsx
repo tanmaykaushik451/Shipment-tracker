@@ -12,10 +12,11 @@ const ShipmentState =(props:any)=>{
     const [state,dispatch] = useReducer<React.Reducer<IInitialstate, Action>>(ShipmentReducer,InitialState)
 
     const getshipments = async ()=>{
+        const apikey = process.env.REACT_APP_API_KEY
         const config ={
             headers:{
                 'Content-Type':'application/json',
-                'Authorization' : 'Bearer tTU3gFVUdP'
+                'Authorization' : `Bearer ${apikey}`
             }
         }
         const body ={
