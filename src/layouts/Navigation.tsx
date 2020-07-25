@@ -40,11 +40,11 @@ const Navigation: React.FC = () => {
                 Transporters
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/Profile" className="nav-link font-weight-bold">
+            <li className="nav-item dropdown">
+              <div className="nav-link font-weight-bold">
                 <img className="profile mr-2" src={profile} alt="profile"/>
                 <i className="fa fa-angle-down" aria-hidden="true"></i>
-              </Link>
+              </div>
             </li>
           </ul>
         </div>

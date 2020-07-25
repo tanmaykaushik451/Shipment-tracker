@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MaterialTable from "material-table";
 import ShipmentContext from "../context/ShipmentContext";
 
@@ -7,11 +7,24 @@ const ItemsTable: React.FC = () => {
 
   const { filtered } = shipmentcontext.State;
 
+  const {getselected} = shipmentcontext
+  // const [rowname,setrowname] = useState()
+
+  const set =(rowData: any)=>{
+    getselected(rowData)
+    console.log(rowData)
+  }
+
   return (
     <>
       <div style={{ width: "100%", overflowY: "hidden" }}>
         <MaterialTable
-          options={{
+        actions={[{
+          icon:"library_add",
+          tooltip:"show details",
+          onClick:(event,rowData)=> set(rowData)
+        }]}
+            options={{
             search: false,
             showTitle: false,
             toolbar: false,
@@ -20,16 +33,15 @@ const ItemsTable: React.FC = () => {
             maxBodyHeight: "400px",
             minBodyHeight:"400px",
             paginationType: "stepped",
-            tableLayout: "fixed"
+            tableLayout: "fixed",
           }}
           columns={[
-            { title: "AWB NUMBER", field: "awbno" },
+            { title: "AWB NUMBER", field: "awbno" ,},
             { title: "TRANSPORTER", field: "carrier" },
             { title: "SOURCE", field: "from" },
             { title: "DESTINATION", field: "to" },
             { title: "BRAND", field: "carrier" },
             { title: "START DATE", field: "pickup_date" },
-            { title: "ETD", field: "" },
             {
               title: "STATUS",
               field: "current_status",
