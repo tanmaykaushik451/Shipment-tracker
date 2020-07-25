@@ -17,7 +17,7 @@ const Home : React.FC = ()=>{
     return(
         <div className="d-flex flex-column">
             <ShipmentCounter/>
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex align-items-center">
                 <div className="stepper">hello</div>
                 <div className="tablediv"><ItemsTable/></div>
             </div>
