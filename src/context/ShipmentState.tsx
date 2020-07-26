@@ -5,7 +5,7 @@ import ShipmentReducer, { Action } from "./ShipmentReducer"
 import ShipmentContext from "./ShipmentContext"
 import axios from 'axios';
 
-import { GET_SHIPMENTS, SHIPMENT_ERROR, GET_COUNTERS, SET_FILTERS, GET_SELECTED } from "./Types"
+import { GET_SHIPMENTS, SHIPMENT_ERROR, GET_COUNTERS, SET_FILTERS, GET_SELECTED, SELECT_DEFAULT } from "./Types"
 
 const ShipmentState =(props:any)=>{
 
@@ -43,13 +43,18 @@ const ShipmentState =(props:any)=>{
         dispatch({type:GET_SELECTED,payload:selected})
     }
 
+    const setdefaultfilter =()=>{
+        dispatch({type:SELECT_DEFAULT})
+    }
+
     return(
         <ShipmentContext.Provider value={{
             State:state,
             getshipments,
             getcounters,
             setfilters,
-            getselected
+            getselected,
+            setdefaultfilter
         }}>
             {props.children}
         </ShipmentContext.Provider>

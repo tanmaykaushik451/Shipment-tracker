@@ -5,5 +5,6 @@ export interface IShipmentContext {
     getshipments : () => void,
     getcounters :()=>void,
     setfilters :(status : string)=>void,
-    getselected :(status : string)=>void
+    getselected :(status : string)=>void,
+    setdefaultfilter :()=>void,
 }

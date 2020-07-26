@@ -8,13 +8,19 @@ const Home : React.FC = ()=>{
 
     const shipmentContext = useContext(ShipmentContext)
 
-    const {getshipments} = shipmentContext
+    const {getshipments,setdefaultfilter} = shipmentContext
+
+    const {shipments} = shipmentContext.State
 
     useEffect(()=>{
         getshipments()
         // eslint-disable-next-line
     },[])
 
+    useEffect(()=>{
+        setdefaultfilter()
+    },[shipments])
+    
     return(
         <div className="d-flex flex-column">
             <ShipmentCounter/>

@@ -8,6 +8,7 @@ const ContextState : IShipmentContext={
     getcounters: ()=>{throw new Error("Shipments not available")},
     setfilters: ()=>{throw new Error("Shipments not available")},
     getselected: ()=>{throw new Error("Shipments not available")},
+    setdefaultfilter: ()=>{throw new Error("Shipments not available")},
 }
 
 const ShipmentContext = createContext<IShipmentContext>(ContextState)

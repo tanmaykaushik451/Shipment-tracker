@@ -54,7 +54,7 @@ li:hover{
 .counteritem{
   color: blue;
   width: 100px;
-  background-color: rgb(189, 223, 235);
+  background-color: rgb(213, 222, 255);
   margin: 0px 3px;
   border-radius: 10%;
   max-height: 90px;
@@ -79,16 +79,18 @@ li:hover{
 
 .stepper li{
   position: relative;
-  background-color: rgb(189, 223, 235);
+  /* background-color: rgb(189, 223, 235); */
+  border: 0.5px solid lightgrey;
   padding: 7px;
   margin: 10px 0px;
   text-transform: lowercase ;
   font-size: 12px;
+  color: grey;
 }
 
 .stepper li::before{
   content: '';
-  background-color: lightblue;
+  background-color: rgb(60, 190, 212);
   width: 10px;
   height: 10px;
   border-radius: 50%;
