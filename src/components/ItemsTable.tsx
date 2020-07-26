@@ -8,16 +8,14 @@ const ItemsTable: React.FC = () => {
   const { filtered } = shipmentcontext.State;
 
   const {getselected} = shipmentcontext
-  // const [rowname,setrowname] = useState()
 
   const set =(rowData: any)=>{
     getselected(rowData)
-    console.log(rowData)
   }
 
   return (
     <>
-      <div style={{ width: "100%", overflowY: "hidden" }}>
+      <div style={{ width: "100%", overflowY: "hidden" }} id="table">
         <MaterialTable
         actions={[{
           icon:"library_add",
@@ -34,6 +32,10 @@ const ItemsTable: React.FC = () => {
             minBodyHeight:"400px",
             paginationType: "stepped",
             tableLayout: "fixed",
+            headerStyle:{
+              fontSize:"11px",
+              color: "grey"
+            }
           }}
           columns={[
             { title: "AWB NUMBER", field: "awbno" ,},

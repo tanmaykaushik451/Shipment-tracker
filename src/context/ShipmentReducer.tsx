@@ -32,7 +32,7 @@ export default  (state : IInitialstate,action:Action) : IInitialstate =>{
         case GET_SELECTED:
             return{
                 ...state,
-                selected: action.payload
+                selected: action.payload.scan            
             }
         default :
         return state

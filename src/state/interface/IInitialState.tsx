@@ -1,6 +1,6 @@
 export interface IInitialstate{
     shipments : any[],
     filtered : any[],
-    selected :{},
+    selected :any[],
     counters:any[]
 }
