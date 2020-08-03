@@ -15,7 +15,7 @@ const ItemsTable: React.FC = () => {
 
   return (
     <>
-      <div style={{ width: "100%", overflowY: "hidden" }} id="table">
+      <div style={{ width: "100%", overflowY: "hidden" ,overflowX:"auto"}} id="table">
         <MaterialTable
         actions={[{
           icon:"library_add",

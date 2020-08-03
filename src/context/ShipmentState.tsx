@@ -8,11 +8,12 @@ import axios from 'axios';
 import { GET_SHIPMENTS, SHIPMENT_ERROR, GET_COUNTERS, SET_FILTERS, GET_SELECTED, SELECT_DEFAULT } from "./Types"
 
 const ShipmentState =(props:any)=>{
+    const apikey = process.env.REACT_APP_API_KEY
+
 
     const [state,dispatch] = useReducer<React.Reducer<IInitialstate, Action>>(ShipmentReducer,InitialState)
 
     const getshipments = async ()=>{
-        const apikey = process.env.REACT_APP_API_KEY
         const config ={
             headers:{
                 'Content-Type':'application/json',
@@ -20,10 +21,10 @@ const ShipmentState =(props:any)=>{
             }
         }
         const body ={
-            "email" : "tanmay.kaushik41@gmail.com"
+            "email" : "testingapi@gmail.com"
         }
         try {
-        const res = await axios.post('https://93870v1pgk.execute-api.ap-south-1.amazonaws.com/latest/shipments/tanmay',body,config)
+        const res = await axios.post('https://93870v1pgk.execute-api.ap-south-1.amazonaws.com/latest/shipments/testing',body,config)
         dispatch({type : GET_SHIPMENTS,payload:res.data.data})
 
         } catch (e) {

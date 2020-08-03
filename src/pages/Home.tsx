@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       )}
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center flex-column flex-md-row">
         <div className="stepper">
           <StatusStepper />
         </div>

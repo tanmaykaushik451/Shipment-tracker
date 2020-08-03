@@ -8,8 +8,8 @@ const Navigation: React.FC = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <Link to="/" className="navbar-brand d-flex align-items-center ml-5" href="#">
-         <img src={logo} alt="logo" className="logo"/>
-          <p className="mb-0 logotext">Intugine</p>
+        <i className="fa fa-map-marker" aria-hidden="true"></i>
+          <p className="m-2 mb-0 logotext">TrackShippy</p>
         </Link>
         <button
           className="navbar-toggler"
