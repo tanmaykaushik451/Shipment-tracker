@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import logo from "../assets/logo.svg"
 import profile from "../assets/profile.svg"
 
 const Navigation: React.FC = () => {
